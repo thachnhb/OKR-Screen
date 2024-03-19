@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>The generated source code Web Application for Sakai</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div th:replace="~{fragments/header :: header}">Header</div>
+    
+    <div class="container">
+        <div class="text-center ">
+           <p> Welcome to Homepage, below is list of pages:</p>
+        </div>
+        
+       	<div class="list-of-links">
+       		<div>
+           		<a th:href="@{/form}"> 1. Test input form </a>
+           	</div>
+           	
+           
+            <div>
+           		<a th:href="@{/fbpage}"> 2. Page 1. Facebook. </a>
+            </div>
+           
+            <div>
+           		<a th:href="@{/form}"> 3. Page 2. Instagram. </a>
+            </div>
+           
+            <div>
+           		<a th:href="@{/form}"> 4. Page 3.  </a>
+            </div>
+            
+            <div>
+            	<a th:href="@{addEmployee}" class="btn btn-success btn-lg">5. Page 4. </a>
+            </div>
+       	</div>
+           
+           
+    </div>
+    
+    <div th:insert="~{fragments/footer :: footer}">&copy; 2017 The MKS Group</div>
+
+</body>
+</html>

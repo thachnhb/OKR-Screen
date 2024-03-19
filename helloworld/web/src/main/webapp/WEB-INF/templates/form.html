@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Input Form Page</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Datepicker library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+</head>
+<body>
+
+   <p>This is form page</p>
+	
+	<form action="/submit-form" method="post" enctype="multipart/form-data">
+	
+        <div class="form-group">
+            <label for="textInput">Name:</label>
+            <input type="text" class="form-control" id="name" name="fullname">
+        </div>
+        
+        <div class="form-group">
+            <label for="textareaInput">Description:</label>
+            <textarea class="form-control" id="desc" name="description"></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="selectInput">Gender:</label>
+            <select class="form-control" id="gender" name="genders">
+                <option value="option1">Male</option>
+                <option value="option2">Female</option>
+                <option value="option3">Other</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Role:</label><br>
+            <input type="radio" id="radioInput1" name="radioInput" value="dev">
+            <label for="radioInput1">Developer</label><br>
+            <input type="radio" id="radioInput2" name="radioInput" value="ba">
+            <label for="radioInput2">Business Analysis</label><br>
+            <input type="radio" id="radioInput3" name="radioInput" value="test">
+            <label for="radioInput3">Tester</label><br>
+        </div>
+        
+       <!--  <div class="form-group">
+        	<label for="dateInput">Start Date:</label>
+        	<input type="text" class="form-control" id="startDate" name="startDate">
+    	</div> -->
+    	
+    	<div class="form-group">
+	        <label for="multiSelect">Favorites:</label><br>
+	        <input type="checkbox" id="swim" name="favorites" value="swim">
+	        <label for="swim"> Swimming</label><br>
+	        <input type="checkbox" id="playSport" name="favorites" value="playSport">
+	        <label for="playSport"> Play Sport</label><br>
+	        <input type="checkbox" id="watchTV" name="favorites" value="watchTV">
+	        <label for="watchTV"> Watch TV</label><br>
+	        <input type="checkbox" id="sing" name="favorites" value="sing">
+        	<label for="sing"> Singing</label><br>
+    	</div>
+    	
+        <div class="form-group">
+            <label for="fileInput">Upload Image:</label>
+            <input type="file" id="image" name="fileImage" multiple>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <!-- Preview Image -->
+    <div id="imagePreview"></div>
+
+    <!-- JavaScript for Preview Image -->
+    <script>
+        /* function previewImage() {
+            var fileInput = document.getElementById('image');
+            var imagePreview = document.getElementById('imagePreview');
+            imagePreview.innerHTML = '';
+
+            if (fileInput.files && fileInput.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.style.maxWidth = '200px';
+                    imagePreview.appendChild(img);
+                }
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        } */
+        function previewImage() {
+            var fileInput = document.getElementById('image');
+            var imagePreview = document.getElementById('imagePreview');
+            imagePreview.innerHTML = '';
+
+            if (fileInput.files) {
+                for (var i = 0; i < fileInput.files.length; i++) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        var img = document.createElement('img');
+                        img.src = e.target.result;
+                        img.style.maxWidth = '200px';
+                        imagePreview.appendChild(img);
+                    }
+                    reader.readAsDataURL(fileInput.files[i]);
+                }
+            }
+        }
+        document.getElementById('fileInput').addEventListener('change', previewImage);
+
+        // Datepicker initialization
+        $('#datepicker').datepicker({
+            format: 'yyyy-mm-dd',
+            autoclose: true
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Input Form Page</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<style>
+html, body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vn;
+	background-color: rgb(240, 242, 245);
+}
+
+#header {
+	background-color: rgb(240, 242, 245);
+	height: 92px;
+	text-align: center;
+}
+
+#wp-content {
+	flex: 1;
+	background-color: rgb(240, 242, 245);
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 14.23%;
+	padding-right: 14.23%;
+	height: 496px;
+}
+
+#footer {
+	width: 100%;
+	position: fixed;
+	bottom:0;
+	background-color: rgb(240, 242, 245);
+	height: 92px;
+	text-align: center;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 20px;
+	padding: 0;
+}
+</style>
+<body>
+	<div id='header'>
+	</div>
+
+	<div id="wp-content" class="container">
+		<div class="row">
+
+			<!-- Account list -->
+			<div class="col-md-7">
+				<div style="margin-left: -20px">
+					<img
+						src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg"
+						width="212" height="70">
+				</div>
+				<div
+					style="font-size: 36px; height: 48px; line-height: 48.240002px;">Đăng
+					nhập gần đây</div>
+
+				<div
+					style="font-size: 15px; font-weight: 400; height: 24px; padding-bottom: 12px; width: 536px; line-height: 24px; margin-bottom: 12px; color: rgb(96, 103, 112);">
+					Nhấp vào ảnh của bạn hoặc thêm tài khoản.</div>
+
+				<div class="row" style="width: 100%">
+					<!-- <div
+						style="color: rgb(28, 30, 33); direction: ltr; display: block; font-size: 12px; height: 206px; line-height: 16.08px; overflow-wrap: break-word; position: relative; width: 160px;">
+						 -->
+					<div class="col-md-4"
+						style="color: rgb(28, 30, 33); direction: ltr; font-size: 12px; height: 206px; width: 160px; margin-right: 25px">
+						<a href="facebook.com"
+							style="border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; border-top-left-radius: 8px; border-top-right-radius: 8px; box-shadow: rgb(221, 223, 226) 0px 0px 0px 1px; color: rgb(56, 88, 152); cursor: pointer; direction: ltr; display: block; font-size: 12px; height: 206px; line-height: 16.08px; overflow-wrap: break-word; text-decoration: none; text-decoration-line: none; transition-delay: 0s; transition-duration: 0.2s; transition-property: all; transition-timing-function: ease-out; width: 160px;">
+							<img
+							src="https://scontent.fsgn8-4.fna.fbcdn.net/v/t39.30808-1/427782177_931546968489089_8894244704793583447_n.jpg?stp=dst-jpg_p720x720&_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=I9zr1m_oKOkAX-ufTgO&_nc_ht=scontent.fsgn8-4.fna&oh=00_AfDl7-LYP7DvsZI9PCeQhDuVETtfUAhXpnYhtRg0brLD6Q&oe=65FD4969"
+							style="width: 160px; height: 160px" role="img">
+							<div
+								style="font-size: 18px; height: 22px; line-height: 22px; padding-bottom: 12px; padding-left: 12px; padding-right: 12px; padding-top: 12px; text-align: center">
+								Thach Ngo</div>
+						</a>
+					</div>
+
+					<div class="col-md-4"
+						style="color: rgb(28, 30, 33); direction: ltr; font-size: 12px; height: 206px; width: 160px; margin-right: 25px">
+						<a href="facebook.com"
+							style="border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; border-top-left-radius: 8px; border-top-right-radius: 8px; box-shadow: rgb(221, 223, 226) 0px 0px 0px 1px; color: rgb(56, 88, 152); cursor: pointer; direction: ltr; display: block; font-size: 12px; height: 206px; line-height: 16.08px; overflow-wrap: break-word; text-decoration: none; text-decoration-line: none; transition-delay: 0s; transition-duration: 0.2s; transition-property: all; transition-timing-function: ease-out; width: 160px;">
+							<img
+							src="https://scontent.fsgn8-4.fna.fbcdn.net/v/t39.30808-1/427782177_931546968489089_8894244704793583447_n.jpg?stp=dst-jpg_p720x720&_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=I9zr1m_oKOkAX-ufTgO&_nc_ht=scontent.fsgn8-4.fna&oh=00_AfDl7-LYP7DvsZI9PCeQhDuVETtfUAhXpnYhtRg0brLD6Q&oe=65FD4969"
+							style="width: 160px; height: 160px" role="img">
+							<div
+								style="font-size: 18px; height: 22px; line-height: 22px; padding-bottom: 12px; padding-left: 12px; padding-right: 12px; padding-top: 12px; text-align: center;">
+								Thach Bao</div>
+						</a>
+					</div>
+
+					<div class="col-md-4"
+						style="color: rgb(28, 30, 33); direction: ltr; font-size: 12px; height: 206px; width: 160px; margin-right: 25px">
+						<a href="facebook.com"
+							style="border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; border-top-left-radius: 8px; border-top-right-radius: 8px; box-shadow: rgb(221, 223, 226) 0px 0px 0px 1px; color: rgb(56, 88, 152); cursor: pointer; direction: ltr; display: block; font-size: 12px; height: 206px; line-height: 16.08px; overflow-wrap: break-word; text-decoration: none; text-decoration-line: none; transition-delay: 0s; transition-duration: 0.2s; transition-property: all; transition-timing-function: ease-out; width: 160px;">
+							<img
+							src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/add-circle-blue-1024.png"
+							style="width: 160px; height: 160px" role="img">
+							<div
+								style="font-size: 18px; height: 22px; line-height: 22px; padding-bottom: 12px; padding-left: 12px; padding-right: 12px; padding-top: 12px; text-align: center; border-top: 0.1px solid #3c3c3c;">
+								Thêm tài khoản</div>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Login form -->
+			<div class="col-md-5">
+				<!-- 	<div style="width: 100%"></div> -->
+				<div
+					style="padding-top: 10px; background-color: white; margin-top: 50px; border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(0, 0, 0, 0.1) 0px 8px 16px 0px;">
+					<!-- form -->
+					<form id="login-form2">
+						<!-- <div
+							style="margin-bottom: 6px; margin-top: 6px; font-size: 17px; height: 52px; width: 364px; padding: 6px 0; margin-left: 18px">
+						</div> -->
+						<div
+							style="margin-bottom: 14px; font-size: 17px; height: 52px; width: 364px; padding: 6px 0; margin-left: 18px; margin-right:8px">
+							<input
+								style="appearance: none; border-radius: 6px; border-width: 1px; border-color: rgb(221, 223, 226); border-style: solid; color: rgb(29, 33, 41); cursor: auto; font-size: 17px; font-style: normal; font-weight: 400; line-height: 16px; margin: 0px; padding: 16px 14px; text-align: start; width: 100%;"
+								type="text" id="username" name="username" required
+								placeholder="Email hoặc số điện thoại">
+							<!-- <input
+								style="width: 330px; height: 22px; font-size: 17px; font-weight: 400px; padding: 14px 16px; border-width: 1px"
+								type="text" id="username" name="username" required
+								placeholder="Email hoặc số điện thoại "> -->
+						</div>
+						<div
+							style="margin-bottom: 20px; margin-top: 6px; font-size: 17px; height: 52px; width: 364px; padding: 6px 0; margin-left: 18px; margin-right:8px">
+							<input
+								style="appearance: none; border-radius: 6px; border-width: 1px; border-color: rgb(221, 223, 226); border-style: solid; color: rgb(29, 33, 41); cursor: auto; font-size: 17px; font-style: normal; font-weight: 400; line-height: 16px; margin: 0px; padding: 16px 14px; text-align: start; width: 100%;"
+								type="password" id="password" name="password" required
+								placeholder="Mật khẩu">
+						</div>
+						<div style="padding: 0 20px">
+							<button type="submit" id="login" name="login"
+								style="height: 48px; background-color: rgb(24, 119, 242); border-radius: 6px; width: 100%; color: white; font-size: 20px; text-align: center; font-weight: 700; border-color: rgb(24, 119, 242)">
+								Đăng nhập</button>
+						</div>
+					</form>
+
+					<div
+						style="margin-top: 12px; margin-bottom: 8px; text-align: center">
+						<a href="/forgotpassword"
+							style="font-size: 14px; font-weight: 500; height: auto; line-height: 18.76px">Quên
+							mật khẩu?</a>
+					</div>
+
+					<hr />
+
+					<div style="text-align: center; margin-top:8px; padding-bottom: 20px">
+						<button
+							style="height: 48px; background-color: rgb(56, 167, 34); border-radius: 6px; color: white; font-size: 17px; text-align: center; font-weight: 700; border-color: rgb(56, 167, 34)">Tạo
+							tài khoản mới</button>
+					</div>
+
+				</div>
+				<p style="margin-top: 12px; margin-bottom: 12px; text-align: center">
+					<a style="color: black; font-weight: bold" href="/create-page">Tạo
+						trang</a> dành cho người nổi tiếng, thương hiệu hoặc doanh nghiệp.
+				</p>
+
+
+			</div>
+
+		</div>
+	</div>
+	<div id='footer'>
+		<p>This is footer of login page!</p>
+	</div>
+</body>
+</html>
